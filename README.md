@@ -1,8 +1,19 @@
-# Open Generative Studios
 
-**A Transparent, GPU-Free Orchestral Music Generation Platform**
+<p align="center">
+  <a href="https://opengenerativestudios.studio/" target="_blank">
+    <img src="https://opengenerativestudios.studio/_next/image?url=%2Fassets%2Fnav-logo.png&w=384&q=75" alt="Open Generative Studios"/>
+  </a>
+</p>
+<p align="center">
+  <strong>
+    <a href="https://opengenerativestudios.studio/" target="_blank" rel="noopener noreferrer">
+      Open Generative Studios
+    </a>
+  </strong>
+  — an open platform for machine learning-based music generation and audio rendering.
+</p>
 
-*Faculty of Sciences, University of Monastir — Final-Year Computer Science Project*
+*Faculty of Sciences, University of Monastir: Final-Year Bachelor's Project in Software Engineering and Intelligent Systems*
 
 ---
 
@@ -11,48 +22,48 @@
 1. [Abstract](#abstract)
 2. [Glossary](#glossary)
 3. [General Introduction](#general-introduction)
-   - [General Context](#general-context)
-   - [The Musical Era of Artificial Intelligence](#the-musical-era-of-artificial-intelligence)
-   - [Problem Statement](#problem-statement)
-   - [Philosophy and Objectives](#philosophy-and-objectives)
-   - [Methodological Overview](#methodological-overview-iterative-architecture-centric-development-unified-process)
-4. [Chapter 1 — Inception: Vision, Context, and Technological Foundation](#chapter-1--inception-vision-context-and-technological-foundation)
-   - [Introduction](#introduction)
-   - [Analysis of the Existing Landscape](#analysis-of-the-existing-landscape)
-   - [System Overview](#system-overview)
-   - [Justification of Technological and Architectural Choices](#justification-of-technological-and-architectural-choices)
-   - [Target Architecture: 6-Microservice Pipeline](#target-architecture-6-microservice-pipeline)
-   - [Initial Infrastructure Setup](#initial-infrastructure-setup)
-   - [Inception Assessment](#inception-assessment)
-5. [Chapter 2 — Elaboration: Architecture and Music Generation Pipeline](#chapter-2--elaboration-architecture-and-music-generation-pipeline)
-   - [Introduction](#introduction-1)
-   - [System Architecture](#system-architecture)
-   - [Application Gateway Service](#application-gateway-service)
-   - [Composition Service](#composition-service)
-   - [MIDI Post-Processing Service](#midi-post-processing-service)
-   - [Audio Rendering Service](#audio-rendering-service)
-   - [Musical Notation Service](#musical-notation-service)
-   - [Notification Service](#notification-service)
-   - [Elaboration Assessment](#elaboration-assessment)
-6. [Chapter 3 — Construction: Application Services, User Experience, and Quality](#chapter-3--construction-application-services-user-experience-and-quality)
-   - [Introduction](#introduction-2)
-   - [Security and Authentication](#security-and-authentication)
-   - [Billing and Bundle Management](#billing-and-bundle-management)
-   - [Client Web Application](#client-web-application)
-   - [Admin Dashboard](#admin-dashboard)
-   - [Quality Assurance and Observability](#quality-assurance-and-observability)
-   - [Construction Assessment](#construction-assessment)
-7. [Chapter 4 — Transition: Deployment, Operations, and Perspectives](#chapter-4--transition-deployment-operations-and-perspectives)
-   - [Introduction](#introduction-3)
-   - [Infrastructure and Deployment](#infrastructure-and-deployment)
-   - [Lessons Learned](#lessons-learned)
-   - [Transition Assessment](#transition-assessment)
+ - [General Context](#general-context)
+ - [The Musical Era of Artificial Intelligence](#the-musical-era-of-artificial-intelligence)
+ - [Problem Statement](#problem-statement)
+ - [Philosophy and Objectives](#philosophy-and-objectives)
+ - [Methodological Overview](#methodological-overview-iterative-architecture-centric-development-unified-process)
+4. [Chapter 1: Inception: Vision, Context, and Technological Foundation](#chapter-1--inception-vision-context-and-technological-foundation)
+ - [Introduction](#introduction)
+ - [Analysis of the Existing Landscape](#analysis-of-the-existing-landscape)
+ - [System Overview](#system-overview)
+ - [Justification of Technological and Architectural Choices](#justification-of-technological-and-architectural-choices)
+ - [Target Architecture: 6-Microservice Pipeline](#target-architecture-6-microservice-pipeline)
+ - [Initial Infrastructure Setup](#initial-infrastructure-setup)
+ - [Inception Assessment](#inception-assessment)
+5. [Chapter 2: Elaboration: Architecture and Music Generation Pipeline](#chapter-2--elaboration-architecture-and-music-generation-pipeline)
+ - [Introduction](#introduction-1)
+ - [System Architecture](#system-architecture)
+ - [Application Gateway Service](#application-gateway-service)
+ - [Composition Service](#composition-service)
+ - [MIDI Post-Processing Service](#midi-post-processing-service)
+ - [Audio Rendering Service](#audio-rendering-service)
+ - [Musical Notation Service](#musical-notation-service)
+ - [Notification Service](#notification-service)
+ - [Elaboration Assessment](#elaboration-assessment)
+6. [Chapter 3: Construction: Application Services, User Experience, and Quality](#chapter-3--construction-application-services-user-experience-and-quality)
+ - [Introduction](#introduction-2)
+ - [Security and Authentication](#security-and-authentication)
+ - [Billing and Bundle Management](#billing-and-bundle-management)
+ - [Client Web Application](#client-web-application)
+ - [Admin Dashboard](#admin-dashboard)
+ - [Quality Assurance and Observability](#quality-assurance-and-observability)
+ - [Construction Assessment](#construction-assessment)
+7. [Chapter 4: Transition: Deployment, Operations, and Perspectives](#chapter-4--transition-deployment-operations-and-perspectives)
+ - [Introduction](#introduction-3)
+ - [Infrastructure and Deployment](#infrastructure-and-deployment)
+ - [Lessons Learned](#lessons-learned)
+ - [Transition Assessment](#transition-assessment)
 8. [General Conclusion](#general-conclusion)
-9. [Appendix A — Technology and Audio Reference](#appendix-a--technology-and-audio-reference)
-10. [Appendix B — VPO Catalog](#appendix-b--vpo-catalog)
-11. [Appendix C — Detailed Music Dictionary](#appendix-c--detailed-music-dictionary)
-12. [Appendix D — Musical Intent Document: Role and Structure](#appendix-d--musical-intent-document-role-and-structure)
-13. [Appendix E — API Endpoint Reference](#appendix-e--api-endpoint-reference)
+9. [Appendix A: Technology and Audio Reference](#appendix-a--technology-and-audio-reference)
+10. [Appendix B: VPO Catalog](#appendix-b--vpo-catalog)
+11. [Appendix C: Detailed Music Dictionary](#appendix-c--detailed-music-dictionary)
+12. [Appendix D: Musical Intent Document: Role and Structure](#appendix-d--musical-intent-document-role-and-structure)
+13. [Appendix E: API Endpoint Reference](#appendix-e--api-endpoint-reference)
 14. [References](#references)
 
 ---
@@ -138,15 +149,15 @@ The dominant commercial platforms learn directly from raw audio corpora and synt
 
 This opacity deprives the composer of mastery: they can neither correct a specific musical decision, nor reuse a generation as a starting point, nor translate the result into a score usable by real musicians.
 
-The central question of this work is therefore: is it possible to design an orchestral music generation system that restores compositional control to the composer, while combining computational lightness with algorithmic transparency? The Open Generative Studios project attempts to answer this by articulating specialized services, lightweight GPU-free models, and a processing chain in which each step remains visible, modifiable, and replayable at will. The platform supports the composer in an iterative process: each generation is part of a persistent conversation, refined through exchanges, and results in a printable score — a concrete bridge between digital creation and the real musical world, directly usable by musicians, ensembles, or orchestras.
+The central question of this work is therefore: is it possible to design an orchestral music generation system that restores compositional control to the composer, while combining computational lightness with algorithmic transparency? The Open Generative Studios project attempts to answer this by articulating specialized services, lightweight GPU-free models, and a processing chain in which each step remains visible, modifiable, and replayable at will. The platform supports the composer in an iterative process: each generation is part of a persistent conversation, refined through exchanges, and results in a printable score, a concrete bridge between digital creation and the real musical world, directly usable by musicians, ensembles, or orchestras.
 
 #### Value Added by the Project
 
-The project distinguishes itself through three properties centered on the composer's experience: iterative composition within a persistent conversation, allowing the creation to be refined over exchanges without starting from scratch; a printable score directly usable by real musicians, opening digital creation toward the real musical world; and a transparent architecture where each step of the pipeline remains inspectable, modifiable, and replayable at will.
+The project distinguishes itself through three properties centered on the composer's experience: iterative composition within a persistent conversation, allowing the creation to be refined over exchanges without starting from scratch. A printable score directly usable by real musicians, opening digital creation toward the real musical world. And a transparent architecture where each step of the pipeline remains inspectable, modifiable, and replayable at will.
 
 ### Philosophy and Objectives
 
-The platform rests on a conviction: one should never blindly trust a machine to create music. Rather than delegating the process to an opaque model, the system makes every creative gesture visible: a text prompt becomes a structured musical intent, which breaks down into MIDI note layers passing through a controlled post-processing stage, giving rise to an orchestral audio rendering and a printable score. Nothing is concealed; everything is traceable.
+The platform rests on a conviction: one should never blindly trust a machine to create music. Rather than delegating the process to an opaque model, the system makes every creative gesture visible: a text prompt becomes a structured musical intent, which breaks down into MIDI note layers passing through a controlled post-processing stage, giving rise to an orchestral audio rendering and a printable score. Nothing is concealed. Everything is traceable.
 
 Each step is a link that can be grasped, modified, or replayed without disrupting the whole. This granularity changes everything: it restores the composer's ability to intervene at every moment of the creative process.
 
@@ -164,12 +175,12 @@ The Unified Process (UP) is an iterative and incremental software development me
 
 The project follows the Unified Process, structured in four phases from design to production:
 
-- **Chapter 1: Inception** — a short initialization phase dedicated to the system's vision, context, and technological foundation.
-- **Chapter 2: Elaboration** — the main phase devoted to architecture and the music generation pipeline.
-- **Chapter 3: Construction** — the main phase focused on application services, user experience, and quality.
-- **Chapter 4: Transition** — a short closing phase covering deployment, operations, and system perspectives.
+- **Chapter 1: Inception**: a short initialization phase dedicated to the system's vision, context, and technological foundation.
+- **Chapter 2: Elaboration**: the main phase devoted to architecture and the music generation pipeline.
+- **Chapter 3: Construction**: the main phase focused on application services, user experience, and quality.
+- **Chapter 4: Transition**: a short closing phase covering deployment, operations, and system perspectives.
 
-This choice is justified by the architectural nature of the system: a sequence of services whose coherence rests on fragile technical contracts — exchange formats between services, data distribution, loading of machine learning models, and instrumented audio rendering. The failure of a single one of these contracts is enough to invalidate all downstream processing.
+This choice is justified by the architectural nature of the system: a sequence of services whose coherence rests on fragile technical contracts - exchange formats between services, data distribution, loading of machine learning models, and instrumented audio rendering. The failure of a single one of these contracts is enough to invalidate all downstream processing.
 
 The elaboration phase is essential as a risk management mechanism: it demands architectural validation before any resource commitment, where an agile method like Scrum would dilute this risk without guaranteeing early architectural closure, and where a sequential method like the waterfall cycle would defer it to the end of the project.
 
@@ -177,7 +188,7 @@ The result is a relevant compromise, combining controlled iteration and explicit
 
 ---
 
-## Chapter 1 — Inception: Vision, Context, and Technological Foundation
+## Chapter 1: Inception: Vision, Context, and Technological Foundation
 
 ### Introduction
 
@@ -187,19 +198,19 @@ The Inception phase frames the problem before any development: dominant platform
 
 The music generation landscape is dominated by audio-first, prompt-driven solutions oriented toward direct rendering. The analysis below synthesizes their limitations from the composer's perspective.
 
-- **Suno:** prompt-to-audio generation for the general public. Version 4.5 focuses primarily on expanding styles, improving vocals, and tracks up to eight minutes. Structure and instrumentation meta-tags can orient the model, but act only as simple probabilistic signal weights — suggestions without guarantees of reproducibility or symbolic artifact output. The composer can neither correct a precise musical decision nor export a usable score.
+- **Suno:** prompt-to-audio generation for the general public. Version 4.5 focuses primarily on expanding styles, improving vocals, and tracks up to eight minutes. Structure and instrumentation meta-tags can orient the model, but act only as simple probabilistic signal weights - suggestions without guarantees of reproducibility or symbolic artifact output. The composer can neither correct a precise musical decision nor export a usable score.
 - **Udio:** significant residual variability despite the addition of continuation and section-by-section remixing. Each generation starts from scratch without memory of the original intent, making any iterative approach laborious.
 - **Google DeepMind (MusicLM/AudioLM):** research results with restricted access, no composer interface, and no tooling for fine orchestration.
 - **Meta (MusicGen):** open-source model with no native symbolic representation or score export. The composer obtains an audio rendering with no leverage to modify its structure, instrumentation, or harmony.
 - **Stability AI (Stable Audio):** advanced audio control among audio-first tools, but intermediate artifacts remain inaccessible and no score is produced.
 - **AIVA:** partial exception with a piano roll editor and native MIDI export on all pricing tiers. The platform remains centered on predefined styles across more than 250 genres, with no persistent conversation or iterative workflow.
-- **Soundraw / Boomy:** template-guided solutions, limited customization, and exclusively audio outputs — no score, no symbolic control.
+- **Soundraw / Boomy:** template-guided solutions, limited customization, and exclusively audio outputs - no score, no symbolic control.
 
 These limitations converge toward three structural gaps from the composer's perspective:
 
 - **Iterative composition:** each generation is part of a persistent conversation, refined through exchanges, without starting from scratch with each prompt.
 - **Usable score:** each composition results in a printable score, directly readable by musicians, ensembles, or orchestras.
-- **Musical control:** each composition retains a symbolic representation of structure, instrumentation, and dynamics, adjustable deterministically — unlike the probabilistic signal weights of audio-first systems.
+- **Musical control:** each composition retains a symbolic representation of structure, instrumentation, and dynamics, adjustable deterministically - unlike the probabilistic signal weights of audio-first systems.
 
 Additionally, the system relies on classical machine learning models built around MIDI symbolic representations, with no GPU at inference time, reducing operational costs and latency.
 
@@ -211,7 +222,7 @@ The project takes the form of a SaaS web application capable of transforming a m
 
 #### Interface and Web Applications
 
-Next.js App Router powers two applications with distinct needs. The first exposes two environments: server-side rendering (SSR) for project discovery, documentation, and authentication — optimized for SEO — and client-side rendering (CSR) for the real-time interactive experience where interactions are orchestrated and pipeline progress becomes visible. The admin dashboard relies on the same server-side rendering, keeping protected routes out of reach on the client side. Both applications share the same technical base: TypeScript, React, Tailwind CSS, and HeroUI, preventing any structural divergence. On the back end, Node.js covers web routes, sessions, Redis queues, and billing, while musical processing belongs to dedicated Python services.
+Next.js App Router powers two applications with distinct needs. The first exposes two environments: server-side rendering (SSR) for project discovery, documentation, and authentication - optimized for SEO - and client-side rendering (CSR) for the real-time interactive experience where interactions are orchestrated and pipeline progress becomes visible. The admin dashboard relies on the same server-side rendering, keeping protected routes out of reach on the client side. Both applications share the same technical base: TypeScript, React, Tailwind CSS, and HeroUI, preventing any structural divergence. On the back end, Node.js covers web routes, sessions, Redis queues, and billing, while musical processing belongs to dedicated Python services.
 
 #### Persistence and Inter-Service Communication
 
@@ -223,7 +234,7 @@ Claude Haiku, selected for its native JSON output and prompt caching, converts t
 
 #### Musical and Audio Processing
 
-The mido library handles reading, writing, and transforming MIDI files. Orchestral rendering relies on Sfizz and the SFZ format, covering classical families: strings, winds, brass, and percussion — without depending on a DAW or proprietary VST plugins. Pedalboard applies audio effects from Python, including reverb, compression, and equalization. MIDI-to-PDF score conversion is handled by the MuseScore CLI.
+The mido library handles reading, writing, and transforming MIDI files. Orchestral rendering relies on Sfizz and the SFZ format, covering classical families: strings, winds, brass, and percussion - without depending on a DAW or proprietary VST plugins. Pedalboard applies audio effects from Python, including reverb, compression, and equalization. MIDI-to-PDF score conversion is handled by the MuseScore CLI.
 
 #### Security
 
@@ -266,11 +277,11 @@ Each processing service adheres to a single responsibility, communicates exclusi
 
 1. **The client web application** (Node.js/Next.js) is the platform's single entry point and the only interface exposed to the user. It handles authentication, session management, and credit balance verification before accepting any generation request. Once validated, it builds the job context and submits it to the queue. At the end of the pipeline, it retrieves produced artifacts and makes them accessible.
 
-2. **The composition engine** (Python) is the pipeline's cognitive core and the only service authorized to invoke a language model. Upon receiving a job, it submits the prompt to Claude Haiku to extract a musical intent, then validates requested instruments against the VPO catalog to guarantee their compatibility with SFZ rendering. It then drives the three specialized models — rhythm, melody, and expression — to produce raw MIDI layers before publishing to the next queue.
+2. **The composition engine** (Python) is the pipeline's cognitive core and the only service authorized to invoke a language model. Upon receiving a job, it submits the prompt to Claude Haiku to extract a musical intent, then validates requested instruments against the VPO catalog to guarantee their compatibility with SFZ rendering. It then drives the three specialized models - rhythm, melody, and expression - to produce raw MIDI layers before publishing to the next queue.
 
 3. **The MIDI service** (Python) is the pipeline's deterministic stabilization step. It makes no creative decisions but guarantees that symbolic data from composition is clean and coherent before reaching audio rendering. It normalizes velocities by section based on the intent, aligns and clips the timeline, closes any unfinished active notes, and applies deterministic fallbacks on empty layers. It calculates a traceability manifest to guarantee artifact integrity for downstream services.
 
-4. **The audio rendering service** (Python) is the only service in the pipeline to produce audio. It loads instrument assignments, then synthesizes each MIDI track independently via the SFZ/Sfizz engine, relying on orchestral samples covering strings, winds, brass, and percussion families. The resulting stems are assembled into a stereo mix to which mastering effects are applied — reverb, compression, and equalization.
+4. **The audio rendering service** (Python) is the only service in the pipeline to produce audio. It loads instrument assignments, then synthesizes each MIDI track independently via the SFZ/Sfizz engine, relying on orchestral samples covering strings, winds, brass, and percussion families. The resulting stems are assembled into a stereo mix to which mastering effects are applied - reverb, compression, and equalization.
 
 5. **The notation service** (Python) materializes the composition as a readable, printable, and shareable score. It consumes the post-processed MIDI files and invokes the MuseScore CLI to convert them into a PDF score, producing a conductor's score as well as individual instrument parts. This step is triggered after audio rendering, as the user must have their audio rendering before receiving their score.
 
@@ -310,7 +321,7 @@ The Elaboration phase must transform these technical boundaries into reliable, o
 
 ---
 
-## Chapter 2 — Elaboration: Architecture and Music Generation Pipeline
+## Chapter 2: Elaboration: Architecture and Music Generation Pipeline
 
 ### Introduction
 
@@ -370,7 +381,7 @@ This complementarity combines expressivity and stylistic breadth within the same
 The Random Forest was retained for the expressive component because it efficiently models non-linear relationships between musical context, velocity, and duration micro-variation without depending on a large sequential model. In this configuration, 200 trees train two independent heads: the first predicts MIDI velocity (0-127), the second predicts the duration delta δ, defined by:
 
 ```
-δ = (actual duration − quantized duration) / quantized duration,  δ ∈ [−0.9; 2.5]
+δ = (actual duration − quantized duration) / quantized duration, δ ∈ [−0.9, 2.5]
 ```
 
 to suppress extreme timing artifacts.
@@ -431,7 +442,7 @@ The velocity MAE (8.70) is on a 127-level scale: it represents an error of less 
 
 ##### b. Melodic Component
 
-The third-order Markov chain was retained for melody because it captures sufficient local context to orient the musical phrase without incurring the cost of a deep autoregressive model. It is also naturally probabilistic: temperature allows dosing predictability and variation — two essential properties for generating several plausible lines from the same intent. The model predicts the next scale degree from the previous three: P(dn | dn-3, dn-2, dn-1).
+The third-order Markov chain was retained for melody because it captures sufficient local context to orient the musical phrase without incurring the cost of a deep autoregressive model. It is also naturally probabilistic: temperature allows dosing predictability and variation - two essential properties for generating several plausible lines from the same intent. The model predicts the next scale degree from the previous three: P(dn | dn-3, dn-2, dn-1).
 
 Laplace smoothing (alpha=0.25) guarantees non-zero probabilities on rare contexts, ensuring full inference coverage.
 
@@ -471,7 +482,7 @@ Top-1 accuracy (~37%) should be compared to the random baseline of 1/7 = 14%: th
 
 ##### c. Rhythmic Component
 
-K-Means was retained for the rhythmic component because measures can be described as binary attack vectors — a format well suited to unsupervised clustering. It extracts recurring groove families without manual annotation.
+K-Means was retained for the rhythmic component because measures can be described as binary attack vectors - a format well suited to unsupervised clustering. It extracts recurring groove families without manual annotation.
 
 **Data and train/test split:** 230 Lakh MIDI files per genre, split into measures (bar-level split 80/20):
 
@@ -538,7 +549,7 @@ It maintains an in-memory buffer, persists logs, and exposes endpoints: `/health
 
 #### Results Achieved
 
-The pipeline is operational end-to-end and produces the main artifacts (MIDI, audio, notation) with queue traceability and notifications. The hybrid AI stack covers the three fundamental dimensions of musical expression — rhythm, melody, and dynamics — using specialized, lightweight models trainable without a GPU.
+The pipeline is operational end-to-end and produces the main artifacts (MIDI, audio, notation) with queue traceability and notifications. The hybrid AI stack covers the three fundamental dimensions of musical expression - rhythm, melody, and dynamics - using specialized, lightweight models trainable without a GPU.
 
 #### Identified Limitations
 
@@ -550,7 +561,7 @@ The Construction phase must concentrate effort on product hardening: documentary
 
 ---
 
-## Chapter 3 — Construction: Application Services, User Experience, and Quality
+## Chapter 3: Construction: Application Services, User Experience, and Quality
 
 ### Introduction
 
@@ -562,7 +573,7 @@ A functional pipeline is not yet a ready-to-use platform. The Construction phase
 
 Sessions use JWT tokens stored in HttpOnly and Secure cookies in production. Passwords are hashed with bcrypt, while email verification and reset flows rely on time-limited tokens. Protected routes verify the session before any action, then filter conversations, songs, accounts, and MIDI/WAV/PDF files by owner ID.
 
-Control is applied in layers. Middleware intercepts access to private pages and routes; API handlers re-verify identity before executing any sensitive operation.
+Control is applied in layers. Middleware intercepts access to private pages and routes. API handlers re-verify identity before executing any sensitive operation.
 
 Error responses remain neutral to avoid revealing account existence. Google OAuth completes the local flow without bypassing these controls. After provider validation, the server links the identity to an internal account and applies the same quotas. Rate limiting based on Redis (with in-memory fallback) protects authentication entry points.
 
@@ -693,7 +704,7 @@ Integration validation covered the complete Redis queue chain: `composeQueue` �
 
 For each transition, the payload contract was verified with respect to the presence and format of required fields, artifact path coherence between services, and correct transmission of intent metadata including genre, tempo, and instrumentation.
 
-Failure scenarios were also covered: abrupt stop of a consumer service, recovery after restart, and detection of orphaned messages in the DLQ — validating that the system reacts predictably without silent message loss or pipeline blocking.
+Failure scenarios were also covered: abrupt stop of a consumer service, recovery after restart, and detection of orphaned messages in the DLQ - validating that the system reacts predictably without silent message loss or pipeline blocking.
 
 #### End-to-End Scenario Tests
 
@@ -707,7 +718,7 @@ At the end of this phase, the system covers the entire product path, from accoun
 
 #### Identified Limitations
 
-Functional gains are confirmed, but validation took place entirely in a local environment. Behaviors specific to a production environment — such as real network load, inter-service latency, or cold-start conditions — have not yet been observed or measured.
+Functional gains are confirmed, but validation took place entirely in a local environment. Behaviors specific to a production environment - such as real network load, inter-service latency, or cold-start conditions - have not yet been observed or measured.
 
 #### Challenges Deferred to Transition
 
@@ -715,7 +726,7 @@ Multi-cloud deployment in a production environment, setting up the continuous de
 
 ---
 
-## Chapter 4 — Transition: Deployment, Operations, and Perspectives
+## Chapter 4: Transition: Deployment, Operations, and Perspectives
 
 ### Introduction
 
@@ -729,11 +740,11 @@ Docker Compose allows starting the entire system with a single command. The envi
 
 #### Production Architecture
 
-The target deployment is multi-cloud, leveraging the strengths of each provider. Their choice does not rest solely on technical criteria — maturity of the ecosystem was also decisive: years of production use, reference documentation, and active communities capable of providing substantive answers constitute factors reducing exposure to operational risks.
+The target deployment is multi-cloud, leveraging the strengths of each provider. Their choice does not rest solely on technical criteria - maturity of the ecosystem was also decisive: years of production use, reference documentation, and active communities capable of providing substantive answers constitute factors reducing exposure to operational risks.
 
 **Deployment topology:**
 
-- **DigitalOcean Droplet** hosts the system core: the web application, five pipeline services, and Redis. This grouping reduces inter-service latency and guarantees homogeneous deployment of the entire compute chain. Target machine: Ubuntu 24.04 LTS Droplet in region FRA1 (Frankfurt), with 4 GB RAM, 2 vCPUs, and 80 GB SSD. Each service being encapsulated in an independent Docker container communicating via Redis queues, no code-level dependency exists between them. Consolidation on a single Droplet is an infrastructure choice for the current stage; at scale, each service can be deployed on a dedicated Droplet with adapted resources, without modifying application code.
+- **DigitalOcean Droplet** hosts the system core: the web application, five pipeline services, and Redis. This grouping reduces inter-service latency and guarantees homogeneous deployment of the entire compute chain. Target machine: Ubuntu 24.04 LTS Droplet in region FRA1 (Frankfurt), with 4 GB RAM, 2 vCPUs, and 80 GB SSD. Each service being encapsulated in an independent Docker container communicating via Redis queues, no code-level dependency exists between them. Consolidation on a single Droplet is an infrastructure choice for the current stage. At scale, each service can be deployed on a dedicated Droplet with adapted resources, without modifying application code.
 
 - **Azure App Service** hosts the admin dashboard, fully decoupled from the Droplet: it communicates directly with Supabase and MongoDB Atlas, and remains operational even in the event of a generation pipeline failure.
 
@@ -745,7 +756,7 @@ The target deployment is multi-cloud, leveraging the strengths of each provider.
 
 Caddy provides TLS termination and reverse proxy for all incoming traffic. It exposes two entry points: the main domain routed to the web application on port 3000, and the notification subdomain routed to the gateway on port 8088.
 
-Certificate management relies on the ACME protocol and Let's Encrypt. On startup, Caddy automatically negotiates a valid TLS certificate from Let's Encrypt, stores it locally, and schedules renewal well before expiration — without any manual intervention. The ACME exchange uses an HTTP-01 challenge.
+Certificate management relies on the ACME protocol and Let's Encrypt. On startup, Caddy automatically negotiates a valid TLS certificate from Let's Encrypt, stores it locally, and schedules renewal well before expiration, without any manual intervention. The ACME exchange uses an HTTP-01 challenge.
 
 #### Domain and DNS Configuration
 
@@ -836,9 +847,9 @@ Final validation confirms successful end-to-end executions, from user prompt to 
 
 Two limitations delimit the validity scope of the system.
 
-The first concerns sound quality. The pipeline relies on SFZ libraries, retained for their compatibility with headless execution without a DAW. These libraries faithfully render orchestral families, tessitures, and dynamics. Moving to higher-quality libraries would require DAW integration of delicate engineering — audio buffer management, deployment, and the significant server-side resources that heavy plugins and real-time rendering mobilize.
+The first concerns sound quality. The pipeline relies on SFZ libraries, retained for their compatibility with headless execution without a DAW. These libraries faithfully render orchestral families, tessitures, and dynamics. Moving to higher-quality libraries would require DAW integration of delicate engineering: audio buffer management, deployment, and the significant server-side resources that heavy plugins and real-time rendering mobilize.
 
-The second concerns musical coverage. Models were trained on MAESTRO and Lakh MIDI, two corpora centered on Western music. Other genres — such as Oriental, Arabic, or Andalusian music, with their modal scales and asymmetric rhythmic structures — are not represented and constitute a natural direction for future work.
+The second concerns musical coverage. Models were trained on MAESTRO and Lakh MIDI, two corpora centered on Western music. Other genres, such as Oriental, Arabic, or Andalusian music, with their modal scales and asymmetric rhythmic structures - are not represented and constitute a natural direction for future work.
 
 #### Perspectives
 
@@ -858,13 +869,13 @@ Creating music has always been a profoundly human act. This project rests on an 
 
 This wager has been won. A user can today express a musical intent in natural language and see a work that resembles them emerge in return. Without expensive equipment, without prior expertise, without inaccessible mystery. The machine learns, adapts, and extends human creation. Above all, it explains: every choice it makes can be followed, understood, and questioned. In a field where opacity is too often the norm, this approach already constitutes a kind of quiet revolution.
 
-But what has been built represents only the first phrase of a long story. Future versions dream of being collaborative, capable of hearing the world with greater sensitivity and translating emotion with greater depth. Each of today's limitations is an invitation extended to tomorrow. The objective remains unchanged since the first line of code: to offer anyone — seasoned composer or simple curious mind — the keys to a generative studio that truly resembles them.
+But what has been built represents only the first phrase of a long story. Future versions dream of being collaborative, capable of hearing the world with greater sensitivity and translating emotion with greater depth. Each of today's limitations is an invitation extended to tomorrow. The objective remains unchanged since the first line of code: to offer anyone, seasoned composer or simple curious mind, the keys to a generative studio that truly resembles them.
 
 *Because ultimately, the best score is the one not yet written...*
 
 ---
 
-## Appendix A — Technology and Audio Reference
+## Appendix A: Technology and Audio Reference
 
 | Technology | Definition |
 |------------|------------|
@@ -885,12 +896,12 @@ But what has been built represents only the first phrase of a long story. Future
 | Kaggle | Data science platform for notebooks, competitions, and datasets. |
 | Hugging Face | Platform for sharing ML models and datasets. |
 | mido | Python library for reading, writing, and manipulating MIDI files. |
-| SFZ / Sfizz | SFZ is an open format for describing sampled instruments; Sfizz is an open-source SFZ player. |
+| SFZ / Sfizz | SFZ is an open format for describing sampled instruments. Sfizz is an open-source SFZ player. |
 | Pedalboard | Python library for audio effect chains (EQ, compression, reverb). |
 | MuseScore CLI | Command-line interface for converting and exporting scores. |
 | JWT | JSON Web Token standard for representing and signing authentication tokens. |
 | Google OAuth | OAuth 2.0 implementation for delegated authentication. |
-| Docker / Docker Compose | Containerization platform for packaging and running applications in isolation; Docker Compose orchestrates multi-container applications via YAML files. |
+| Docker / Docker Compose | Containerization platform for packaging and running applications in isolation. Docker Compose orchestrates multi-container applications via YAML files. |
 | GitHub Actions | CI/CD service integrated into GitHub for automating workflows. |
 | Caddy | Web server and reverse proxy with automatic TLS management. |
 | Let's Encrypt | Free, automated certificate authority providing TLS certificates. |
@@ -905,13 +916,13 @@ But what has been built represents only the first phrase of a long story. Future
 
 ---
 
-## Appendix B — VPO Catalog
+## Appendix B: VPO Catalog
 
 The VPO (Virtual Playing Orchestra) is a library of sampled orchestral instruments, distributed in SFZ format and readable via an SFZ player. It allows orchestral rendering from MIDI data in a DAW. In this project, the VPO catalog serves as a reference for validating requested instruments, their tessiture, and their mappings, ensuring direct compatibility with audio rendering. The catalog covers orchestral sections: strings, winds, brass, and percussion.
 
 ---
 
-## Appendix C — Detailed Music Dictionary
+## Appendix C: Detailed Music Dictionary
 
 | Term | Definition |
 |------|------------|
@@ -946,7 +957,7 @@ The VPO (Virtual Playing Orchestra) is a library of sampled orchestral instrumen
 
 ---
 
-## Appendix D — Musical Intent Document: Role and Structure
+## Appendix D: Musical Intent Document: Role and Structure
 
 The intent file is the central artifact produced by the composition engine before any MIDI processing. It formalizes the analysis of the user prompt into coherent, validated musical decisions.
 
@@ -962,7 +973,7 @@ The validator enriches the intent by resolving instruments via the VPO catalog, 
 
 ---
 
-## Appendix E — API Endpoint Reference
+## Appendix E: API Endpoint Reference
 
 ### Client Application
 
@@ -1023,7 +1034,7 @@ The validator enriches the intent by resolving instruments via the VPO catalog, 
 4. Suno Inc. **Introducing v4.5**. 2025.
 5. J. Righteous. **Suno AI: Master Metatags and Create Music Your Way**. 2026.
 6. Musicful AI. **Suno vs Udio: Which AI Song Generator Delivers Better Music?** 2025.
-7. A. Agostinelli et al. **MusicLM: Generating Music From Text**. arXiv:2301.11325, 2023.
+7. A. Agostinelli et al. **MusicLM: Generating Music From Text**. ArXiv:2301.11325, 2023.
 8. J. Copet et al. **Simple and Controllable Music Generation**. NeurIPS 2023.
 9. Meta AI / Replicate. **meta/musicgen: Readme and Docs**. 2023.
 10. AudioCipher. **How to Use Meta's MusicGen for Music Production Workflows**. 2025.
@@ -1032,7 +1043,7 @@ The validator enriches the intent by resolving instruments via the VPO catalog, 
 13. AI Flow Review. **AIVA Review (2025): My Hands-On Test, Full Feature Analysis**. 2025.
 14. SOUNDRAW. **SOUNDRAW: AI Music Generator**. 2020.
 15. Boomy Corporation. **Boomy: Make Music with Artificial Intelligence**. 2021.
-16. Redis. **Redis Lists**. redis.io/docs/latest/develop/data-types/lists/
+16. Redis. **Redis Lists**. Redis.io/docs/latest/develop/data-types/lists/
 17. Anthropic. **Claude: AI Assistant by Anthropic**. 2023.
 18. F. Pedregosa et al. **Scikit-learn: Machine Learning in Python**. JMLR, 12:2825-2830, 2011.
 19. MIDI Manufacturers Association. **MIDI 1.0 Detailed Specification**, v4.2.1. 1996.
@@ -1046,6 +1057,6 @@ The validator enriches the intent by resolving instruments via the VPO catalog, 
 27. L. Breiman. **Random Forests**. *Machine Learning*, 45(1):5-32, 2001.
 28. D. Huron. **Sweet Anticipation: Music and the Psychology of Expectation**. MIT Press, 2006.
 29. J. A. Hartigan, M. A. Wong. **Algorithm AS 136: A K-Means Clustering Algorithm**. *JRSS Series C*, 28(1):100-108, 1979.
-30. WHATWG. **HTML Living Standard: Server-sent events**. html.spec.whatwg.org
+30. WHATWG. **HTML Living Standard: Server-sent events**. Html.spec.whatwg.org
 31. G. Nierhaus. **Algorithmic Composition: Paradigms of Automated Music Generation**. Springer, 2009.
 32. C. Roads. **The Computer Music Tutorial**. MIT Press, 1996.
