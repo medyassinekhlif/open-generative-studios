@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://opengenerativestudios.studio/" target="_blank">
-    <img src="nav-logo.png" alt="Open Generative Studios"/>
+    <img src="nav-logo.png" alt="Open Generative Studios" width="180" style="display: block; margin: 0 auto;"/>
   </a>
 </p>
 <p align="center">
