@@ -1,12 +1,12 @@
 
 <p align="center">
-  <a href="https://opengenerativestudios.studio/" target="_blank">
+  <a href="https://medyassinekhlif.github.io/me/ogs" target="_blank">
     <img src="nav-logo.png" alt="Open Generative Studios" width="300" style="display: block; margin: 0 auto;"/>
   </a>
 </p>
 <p align="center">
   <strong>
-    <a href="https://opengenerativestudios.studio/" target="_blank" rel="noopener noreferrer">
+    <a href="https://medyassinekhlif.github.io/me/ogs" target="_blank" rel="noopener noreferrer">
       Open Generative Studios
     </a>
   </strong>
