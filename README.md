@@ -13,7 +13,7 @@
   — an open platform for machine learning-based music generation and audio rendering.
 </p>
 
-*Faculty of Sciences, University of Monastir: Final-Year Bachelor's Project in Software Engineering and Intelligent Systems*
+*Faculty of Sciences, University of Monastir: Final-Year Bachelor's Project in Software Engineering and Information Systems*
 
 ---
 
